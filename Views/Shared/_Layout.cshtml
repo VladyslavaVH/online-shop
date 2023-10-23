@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewBag.Title</title>
+    <link rel="icon" type="image/x-icon" href="~/darkLogo.ico" />
+    @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />*@
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+
+
+<body>
+    <header>
+        <nav>
+            <div id="yellowHeader">
+                
+                @if (Context.User.IsInRole("admin"))
+                {
+                    <a asp-area="" asp-controller="ShopManager" asp-action="Index">Shop Manager</a>
+                }
+                
+            <div>
+
+                @if (!Context.User.Identity.IsAuthenticated)
+                {
+                    <span>Welcome visitor you can login or create an account</span>
+                    <b>
+                        <a asp-area="" asp-controller="Account" asp-action="Register">Register</a>
+                        <a asp-area="" asp-controller="Account" asp-action="Login">Log in</a>
+                    </b>
+                }
+                else
+                {
+                    <span>Hello,@Context.User.Identity.Name</span>
+                    <a asp-area="" asp-controller="Account" asp-action="Logout">Logout</a>
+                }
+
+            </div>
+            <div>
+                @using (Html.BeginForm("Search", "Home", FormMethod.Get))
+                {
+                    <input type="search" name="text" id="searchInputText" placeholder="Search our shop..."/>
+                    <button type="submit" id="searchBtn">&#128269;</button>
+                }
+            </div>
+            </div>
+            
+            <div id="bottomHeader">
+                <a asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="~/darkLogo.png" height="70" />
+                </a>
+
+                <ul id="menu">
+                    <li>
+                        <a id="menuItem" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                    </li>
+                    <li>
+                        <a id="menuItem" asp-area="" asp-controller="Home" asp-action="About">About</a>
+                    </li>
+                    <li>
+                        <a id="menuItem" asp-area="" asp-controller="Home" asp-action="Delivery">Delivery</a>
+                    </li>
+                    <li>
+                        <a id="menuItem" asp-area="" asp-controller="Home" asp-action="Contacts">Contacts</a>
+                    </li>
+                </ul>
+
+                @if (Context.User.IsInRole("user"))
+                {
+                    <a id="cardBtn" asp-controller="Cart" asp-action="Index">Shopping Card</a>
+                }                
+                
+            </div>
+        </nav>
+    </header>
+
+    <div>
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer>
+        <div>
+            &copy; 2021 - Online Shop
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

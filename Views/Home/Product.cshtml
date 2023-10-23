@@ -1,0 +1,25 @@
+﻿@model Product
+
+@{
+    ViewData["Title"] = Model.Name;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<p>@Model.Name</p>
+<hr/>
+<div class="bigProduct">
+    <div class="gallery">
+        @foreach (var i in Model.Images)
+        {
+            <a class="photo" href="@i.Url"><img src="@i.Url" width="150" height="100" /></a>
+        }
+    </div>
+    <div class="info">
+        <div>
+            <p class="priceP"><b>@Model.Price.ToString("0") ₴</b></p>
+            <a class="addCart" asp-action="Add" asp-controller="Cart" asp-route-id="@Model.Id">Add <b>to Cart</b></a>
+        </div>
+        <p>Color: @Model.Color</p>
+        <p>@Model.Description</p>
+    </div>
+</div>

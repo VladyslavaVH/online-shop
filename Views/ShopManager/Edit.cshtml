@@ -1,0 +1,38 @@
+﻿@model Product
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+@using (Html.BeginForm())
+{
+<div>
+    <h4>Product</h4>
+    @Html.Hidden("Id", Model.Id)
+    <hr />
+    @Html.ValidationSummary()
+    @Html.LabelFor(Model => Model.CategoryFK, "CategoryFK")
+    @Html.DropDownList("CategoryFK", ViewBag.CategoryFK as SelectList)<br />
+
+    @Html.LabelFor(Model => Model.ManufacturerFK, "ManufacturerFK")
+    @Html.DropDownList("ManufacturerFK", ViewBag.ManufacturerFK as SelectList)<br />
+
+    @Html.LabelFor(Model => Model.Name, "Name")
+    @Html.EditorFor(Model => Model.Name)<br />
+
+    @Html.LabelFor(Model => Model.Color, "Color")
+    @Html.EditorFor(Model => Model.Color)<br />
+
+    @Html.LabelFor(Model => Model.Count, "Count")
+    @Html.EditorFor(Model => Model.Count)<br />
+
+    @Html.LabelFor(Model => Model.Price, "Price")
+    @Html.EditorFor(Model => Model.Price)<br />
+
+    @Html.LabelFor(Model => Model.Description, "Description")
+    @Html.TextArea("Description", Model.Description, 5, 50, null)<br />
+
+    <input type="submit" value="Save" />
+</div>
+}

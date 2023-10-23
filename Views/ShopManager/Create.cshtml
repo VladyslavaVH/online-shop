@@ -1,0 +1,39 @@
+﻿@model Product
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+@using (Html.BeginForm())
+{
+<div>
+    <h4>Product</h4>
+    <hr />
+    @Html.ValidationSummary()
+    @Html.LabelFor(Model => Model.CategoryFK, "CategoryFK")
+    @Html.DropDownList("CategoryFK", ViewBag.CategoryFK as SelectList)<br />
+
+
+    @Html.LabelFor(Model => Model.ManufacturerFK, "ManufacturerFK")
+    @Html.DropDownList("ManufacturerFK", ViewBag.ManufacturerFK as SelectList)<br />
+
+    @Html.LabelFor(Model => Model.Name, "Name")
+    @Html.TextBox("Name", "")<br />
+
+    @Html.LabelFor(Model => Model.Color, "Color")
+    @Html.TextBox("Color", "")<br />
+
+    @Html.LabelFor(Model => Model.Count, "Count")
+    @Html.TextBox("Count", "")<br />
+
+    @Html.LabelFor(Model => Model.Price, "Price")
+    @Html.TextBox("Price", "")<br />
+
+    @Html.LabelFor(Model => Model.Description, "Description")
+    @Html.TextAreaFor(Model => Model.Description, 5, 50, null)<br />
+    
+    <input type="submit" value="Save" />
+</div>
+}

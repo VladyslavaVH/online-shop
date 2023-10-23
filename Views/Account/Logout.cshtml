@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Logout";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Log out</h2>
+<hr/>
+<h3>Are you sure you want to log out?</h3>
+
+<div>
+    @using (Html.BeginForm( "Logout", "Account", FormMethod.Post))
+    {
+        <input type="submit" value="Yes" class="btn"/>
+        <a class="btn" asp-controller="Home" asp-action="Index">No, back to list</a>
+    }
+</div>

@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Image>
+@{
+    ViewData["Title"] = "Add Image";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Images</h2>
+<hr />
+    @foreach (var i in Model)
+    {
+        <div style="display: flex; align-items: center;">
+            <div class="gallery">
+                <a class="photo" href="@i.Url"><img src="@i.Url" height="100" /></a>
+            </div>
+            <a class="btn" style="height: max-content;" asp-action="DeleteImage" asp-controller="ShopManager" asp-route-imageId="@i.Id" asp-route-productId="@i.ProductFK">Delete</a>
+        </div>
+    }
+
+<h3>Add Image</h3>
+<hr />
+@using (Html.BeginForm("AddImage", "ShopManager", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.Hidden("id", Model.FirstOrDefault()?.ProductFK)
+    <input type="file" name="uploadedImage" class="btn"/>
+    <input type="submit" value="Upload image" class="btn" />
+}

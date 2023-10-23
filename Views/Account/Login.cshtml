@@ -1,0 +1,24 @@
+﻿@model OnlineShop.ViewModels.LoginViewModel
+
+@{
+    ViewData["Title"] = "Log in";
+}
+
+<h2>Login</h2>
+<hr />
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(Model => Model.Email, "Email")
+    @Html.EditorFor(Model => Model.Email)
+    <br />
+
+    @Html.LabelFor(Model => Model.Password, "Password")
+    @Html.EditorFor(Model => Model.Password)
+    <br />
+
+    <input type="submit" value="Login" />
+}
+
+<a asp-action="Register" asp-controller="Account">Register as a new user</a> |
+<a asp-action="Index" asp-controller="Home">Back to Home</a>

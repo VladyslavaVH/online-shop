@@ -1,0 +1,26 @@
+﻿@model Product
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+<h3>Are you sure you want to delete this product?</h3>
+<h4>@Model.Name</h4>
+<hr/>
+@Html.Hidden("id", Model.Id)
+<table>
+    <tr><td>Color</td><td>@Model.Color</td></tr>
+    <tr><td>Category</td><td>@Model.Category.Name</td></tr>
+    <tr><td>Manufacturer</td><td>@Model.Manufacturer.Name</td></tr>
+    <tr><td>Price</td><td>@Model.Price</td></tr>
+    <tr><td>Description</td><td>@Model.Description</td></tr>
+</table>
+
+<div>
+    @using (Html.BeginForm())
+    {
+        <a asp-controller="ShopManager" asp-action="Index"> Back to list</a>
+        <input type="submit" value="Delete" />
+    }
+</div>

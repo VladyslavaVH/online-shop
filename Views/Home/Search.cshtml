@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Product>
+
+@{
+    ViewData["Title"] = "Search results";
+}
+
+<h2>Results</h2>
+<hr />
+
+<div class="bodyProducts">
+    @foreach (var p in Model)
+    {
+        <div class="article">
+            <p><b>@p.Manufacturer.Name</b></p>
+            <a asp-controller="Home" asp-action="Product" asp-route-id="@p.Id">
+                @if (p.Category.Name == "Laptops and computers")
+                {
+                    <img src="@p.Images.FirstOrDefault().Url" width="170" />
+                }
+                else
+                {
+                    <img src="@p.Images.FirstOrDefault().Url" height="200" />
+                }
+            </a>
+            <p>@p.Name</p>
+            <hr />
+            <div>
+                <p class="priceP"><b>@p.Price.ToString("0") ₴</b></p>
+                <a class="linkBtn" asp-action="Add" asp-controller="Cart" asp-route-id="@p.Id">Add <b>to Cart</b></a>
+            </div>
+        </div>
+    }
+</div>

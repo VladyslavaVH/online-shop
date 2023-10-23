@@ -1,0 +1,22 @@
+﻿@model Product
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+<h3>@Model.Name</h3>
+<hr />
+<table>
+    <tr><td>Color</td><td>@Model.Color</td></tr>
+    <tr><td>Category</td><td>@Model.Category.Name</td></tr>
+    <tr><td>Manufacturer</td><td>@Model.Manufacturer.Name</td></tr>
+    <tr><td>Price</td><td>@Model.Price</td></tr>
+    <tr><td>Description</td><td>@Model.Description</td></tr>
+    <tr><td>Count</td><td>@Model.Count</td></tr>
+</table>
+
+<div>
+    <a asp-controller="ShopManager" asp-action="Index">Back to list</a> |
+    <a asp-controller="ShopManager" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+</div>

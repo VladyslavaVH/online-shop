@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Product>
+@{
+    ViewData["Title"] = "All Products";
+}
+
+<a class="btn" style="margin-left: 10px;" asp-controller="ShopManager" asp-action="Create">Create New</a>
+<table class="tableStyle">
+    <thead>
+        <tr><td>Name</td><td>Category</td><td>Manufacturer</td><td>Color</td><td>Actions</td></tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Model)
+        {
+            <tr>
+                <td>@p.Name</td>
+                <td>@p.Category.Name</td>
+                <td>@p.Manufacturer.Name</td>
+                <td>@p.Color</td>
+                <td>
+                    <a class="btn" asp-controller="ShopManager" asp-action="Edit" asp-route-id="@p.Id">Edit</a>
+                    <a class="btn" asp-controller="ShopManager" asp-action="Delete" asp-route-id="@p.Id">Delete</a>
+                    <a class="btn" asp-controller="ShopManager" asp-action="Images" asp-route-id="@p.Id">Images</a>
+                    <a class="btn" asp-controller="ShopManager" asp-action="Details" asp-route-id="@p.Id">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

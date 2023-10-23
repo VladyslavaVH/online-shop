@@ -1,0 +1,38 @@
+﻿@model OnlineShop.ViewModels.RegisterViewModel
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h2>Register</h2>
+<hr />
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(Model => Model.FirstName, "FirstName")
+    @Html.EditorFor(Model => Model.FirstName)
+    <br />
+
+    @Html.LabelFor(Model => Model.LastName, "LastName")
+    @Html.EditorFor(Model => Model.LastName)
+    <br />
+
+    @Html.LabelFor(Model => Model.Phone, "Phone")
+    @Html.EditorFor(Model => Model.Phone)
+    <br />
+
+    @Html.LabelFor(Model => Model.Email, "Email")
+    @Html.EditorFor(Model => Model.Email)
+    <br />
+
+    @Html.LabelFor(Model => Model.Password, "Password")
+    @Html.EditorFor(Model => Model.Password)
+    <br />
+
+    @Html.LabelFor(Model => Model.ConfirmPassword, "ConfirmPassword")
+    @Html.EditorFor(Model => Model.ConfirmPassword)
+    <br />
+    <input type="submit" value="Register" />
+
+    <a asp-action="Index" asp-controller="Home">Back to List</a>
+}
