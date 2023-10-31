@@ -75,7 +75,7 @@ CREATE TABLE Orders
 );
 GO
 
---заполнение
+--Г§Г ГЇГ®Г«Г­ГҐГ­ГЁГҐ
 INSERT INTO Categories([Name])
 VALUES('Laptops and computers'), ('Smartphones'), ('TV'), ('Electronics')
 
@@ -84,19 +84,19 @@ VALUES('Apple'), ('Samsung'), ('Acer'), ('Asus')
 
 INSERT INTO Products([Name], Color, CategoryFK, ManufacturerFK, [Description], [Count], Price)
 VALUES('Apple iPhone 11 64GB Slim Box (MHDG3)', 'green', 2, 1, 
-	   'Экран (6.1", IPS (Liquid Retina HD), 1792x828)/ Apple A13 Bionic/ основная двойная камера: 12 Мп + 12 Мп, фронтальная камера: 12 Мп/ RAM 4 ГБ/ 64 ГБ встроенной памяти/ 3G/ LTE/ GPS/ ГЛОНАСС/ Nano-SIM/ iOS 13 / 3046 мА*ч
+	   'ГќГЄГ°Г Г­ (6.1", IPS (Liquid Retina HD), 1792x828)/ Apple A13 Bionic/ Г®Г±Г­Г®ГўГ­Г Гї Г¤ГўГ®Г©Г­Г Гї ГЄГ Г¬ГҐГ°Г : 12 ГЊГЇ + 12 ГЊГЇ, ГґГ°Г®Г­ГІГ Г«ГјГ­Г Гї ГЄГ Г¬ГҐГ°Г : 12 ГЊГЇ/ RAM 4 ГѓГЃ/ 64 ГѓГЃ ГўГ±ГІГ°Г®ГҐГ­Г­Г®Г© ГЇГ Г¬ГїГІГЁ/ 3G/ LTE/ GPS/ ГѓГ‹ГЋГЌГЂГ‘Г‘/ Nano-SIM/ iOS 13 / 3046 Г¬ГЂ*Г·
 
-Зарядным блоком и наушниками не комплектуется.', 5, 19999),
+Г‡Г Г°ГїГ¤Г­Г»Г¬ ГЎГ«Г®ГЄГ®Г¬ ГЁ Г­Г ГіГёГ­ГЁГЄГ Г¬ГЁ Г­ГҐ ГЄГ®Г¬ГЇГ«ГҐГЄГІГіГҐГІГ±Гї.', 5, 19999),
 	  ('Apple iPhone 12 mini 64GB', 'purple', 2, 1,
-	  'Экран (5.4", OLED (Super Retina XDR), 2340х1080) / Apple A14 Bionic / двойная основная камера: 12 Мп + 12 Мп, фронтальная камера: 12 Мп / 64 ГБ встроенной памяти / 3G / LTE / 5G / GPS / Nano-SIM, eSIM / iOS 1', 3, 22999),
+	  'ГќГЄГ°Г Г­ (5.4", OLED (Super Retina XDR), 2340Гµ1080) / Apple A14 Bionic / Г¤ГўГ®Г©Г­Г Гї Г®Г±Г­Г®ГўГ­Г Гї ГЄГ Г¬ГҐГ°Г : 12 ГЊГЇ + 12 ГЊГЇ, ГґГ°Г®Г­ГІГ Г«ГјГ­Г Гї ГЄГ Г¬ГҐГ°Г : 12 ГЊГЇ / 64 ГѓГЃ ГўГ±ГІГ°Г®ГҐГ­Г­Г®Г© ГЇГ Г¬ГїГІГЁ / 3G / LTE / 5G / GPS / Nano-SIM, eSIM / iOS 1', 3, 22999),
 	  ('Samsung Galaxy S21 8/256GB Phantom (SM-G991BZWGSEK)', 'white', 2, 2,
-	  'Экран (6.2", Dynamic AMOLED 2X, 2400x1080)/ Samsung Exynos 2100 (1 x 2.9 ГГц + 3 x 2.8 ГГц + 4 x 2.2 ГГц)/ тройная основная камера: 64 Мп + 12 Мп + 12 Мп, фронтальная 10 Мп/ RAM 8 ГБ/ 256 ГБ встроенной памяти/ 3G/ LTE/ 5G/ GPS/ поддержка 2х SIM-карт (Nano-SIM)/ Android 11.0/ 4000 мА*ч', 7, 25999),
+	  'ГќГЄГ°Г Г­ (6.2", Dynamic AMOLED 2X, 2400x1080)/ Samsung Exynos 2100 (1 x 2.9 ГѓГѓГ¶ + 3 x 2.8 ГѓГѓГ¶ + 4 x 2.2 ГѓГѓГ¶)/ ГІГ°Г®Г©Г­Г Гї Г®Г±Г­Г®ГўГ­Г Гї ГЄГ Г¬ГҐГ°Г : 64 ГЊГЇ + 12 ГЊГЇ + 12 ГЊГЇ, ГґГ°Г®Г­ГІГ Г«ГјГ­Г Гї 10 ГЊГЇ/ RAM 8 ГѓГЃ/ 256 ГѓГЃ ГўГ±ГІГ°Г®ГҐГ­Г­Г®Г© ГЇГ Г¬ГїГІГЁ/ 3G/ LTE/ 5G/ GPS/ ГЇГ®Г¤Г¤ГҐГ°Г¦ГЄГ  2Гµ SIM-ГЄГ Г°ГІ (Nano-SIM)/ Android 11.0/ 4000 Г¬ГЂ*Г·', 7, 25999),
 	  ('Samsung Galaxy S20 FE (2021) 6/128GB Cloud (SM-G780GZBDSEK)', 'navy', 2, 2,
-	  'Экран (6.5", Super AMOLED, 2400x1080) / Qualcomm Snapdragon 865 (1х2.84 ГГц + 3х2.42 ГГц + 4х1.8 ГГц) / тройная основная камера: 12 Мп + 12 Мп + 8 Мп, фронтальная: 32 Мп / RAM 6 ГБ / 128 ГБ встроенной памяти + microSD (до 1 ТБ) / 3G / LTE / GPS / поддержка 2х SIM-карт (Nano-SIM) / Android 10 / 4500 мА*ч', 9, 16999),
-	  ('Apple MacBook Air 13" M1 512GB 2020 (MGNE3)', 'Gold', 1, 1, 'Экран 13.3" Retina (2560x1600) WQXGA, глянцевый / Apple M1 / RAM 8 ГБ / SSD 512 ГБ / Apple M1 Graphics / Wi-Fi / Bluetooth / macOS Big Sur / 1.29 кг / золотой', 3, 42999),
-	  ('Asus TUF Gaming F15 FX506LI-HN012 (90NR03T2-M05800)', 'Fortress Gray', 1, 4, 'Экран 15.6" IPS (1920x1080) Full HD 144 Гц, матовый / Intel Core i5-10300H (2.5 - 4.5 ГГц) / RAM 8 ГБ / SSD 512 ГБ / nVidia GeForce GTX 1650 Ti, 4 ГБ / без ОД / LAN / Wi-Fi / Bluetooth / веб-камера / без ОС / 2.3 кг / серый', 10, 24444),
-	  ('Acer Nitro 5 AN515-55-52GP (NH.QB2EU.012)', 'Obsidian Black', 1, 3, 'Экран 15.6” IPS (1920x1080) Full HD 144 Гц, матовый / Intel Core i5-10300H (2.5 - 4.5 ГГц) / RAM 16 ГБ / SSD 512 ГБ / nVidia GeForce RTX 3060, 6 ГБ / без ОД / LAN / Wi-Fi / Bluetooth / веб-камера / без ОС / 2.3 кг / черный', 5, 34999),
-	  ('Asus Zen AiO 24 F5401WUAK-BA006M (90PT02Z1-M05890)', 'Black', 1, 4, 'Экран 23.8" IPS (1920x1080) Full HD / AMD Ryzen 3 5300U (2.6 - 3.8 ГГц) / RAM 8 ГБ / SSD 256 ГБ / AMD Radeon Graphics / без ОД / LAN / Wi-Fi / Bluetooth / веб-камера / без ОС / 7 кг / черный', 7, 16892)
+	  'ГќГЄГ°Г Г­ (6.5", Super AMOLED, 2400x1080) / Qualcomm Snapdragon 865 (1Гµ2.84 ГѓГѓГ¶ + 3Гµ2.42 ГѓГѓГ¶ + 4Гµ1.8 ГѓГѓГ¶) / ГІГ°Г®Г©Г­Г Гї Г®Г±Г­Г®ГўГ­Г Гї ГЄГ Г¬ГҐГ°Г : 12 ГЊГЇ + 12 ГЊГЇ + 8 ГЊГЇ, ГґГ°Г®Г­ГІГ Г«ГјГ­Г Гї: 32 ГЊГЇ / RAM 6 ГѓГЃ / 128 ГѓГЃ ГўГ±ГІГ°Г®ГҐГ­Г­Г®Г© ГЇГ Г¬ГїГІГЁ + microSD (Г¤Г® 1 Г’ГЃ) / 3G / LTE / GPS / ГЇГ®Г¤Г¤ГҐГ°Г¦ГЄГ  2Гµ SIM-ГЄГ Г°ГІ (Nano-SIM) / Android 10 / 4500 Г¬ГЂ*Г·', 9, 16999),
+	  ('Apple MacBook Air 13" M1 512GB 2020 (MGNE3)', 'Gold', 1, 1, 'ГќГЄГ°Г Г­ 13.3" Retina (2560x1600) WQXGA, ГЈГ«ГїГ­Г¶ГҐГўГ»Г© / Apple M1 / RAM 8 ГѓГЃ / SSD 512 ГѓГЃ / Apple M1 Graphics / Wi-Fi / Bluetooth / macOS Big Sur / 1.29 ГЄГЈ / Г§Г®Г«Г®ГІГ®Г©', 3, 42999),
+	  ('Asus TUF Gaming F15 FX506LI-HN012 (90NR03T2-M05800)', 'Fortress Gray', 1, 4, 'ГќГЄГ°Г Г­ 15.6" IPS (1920x1080) Full HD 144 ГѓГ¶, Г¬Г ГІГ®ГўГ»Г© / Intel Core i5-10300H (2.5 - 4.5 ГѓГѓГ¶) / RAM 8 ГѓГЃ / SSD 512 ГѓГЃ / nVidia GeForce GTX 1650 Ti, 4 ГѓГЃ / ГЎГҐГ§ ГЋГ„ / LAN / Wi-Fi / Bluetooth / ГўГҐГЎ-ГЄГ Г¬ГҐГ°Г  / ГЎГҐГ§ ГЋГ‘ / 2.3 ГЄГЈ / Г±ГҐГ°Г»Г©', 10, 24444),
+	  ('Acer Nitro 5 AN515-55-52GP (NH.QB2EU.012)', 'Obsidian Black', 1, 3, 'ГќГЄГ°Г Г­ 15.6вЂќ IPS (1920x1080) Full HD 144 ГѓГ¶, Г¬Г ГІГ®ГўГ»Г© / Intel Core i5-10300H (2.5 - 4.5 ГѓГѓГ¶) / RAM 16 ГѓГЃ / SSD 512 ГѓГЃ / nVidia GeForce RTX 3060, 6 ГѓГЃ / ГЎГҐГ§ ГЋГ„ / LAN / Wi-Fi / Bluetooth / ГўГҐГЎ-ГЄГ Г¬ГҐГ°Г  / ГЎГҐГ§ ГЋГ‘ / 2.3 ГЄГЈ / Г·ГҐГ°Г­Г»Г©', 5, 34999),
+	  ('Asus Zen AiO 24 F5401WUAK-BA006M (90PT02Z1-M05890)', 'Black', 1, 4, 'ГќГЄГ°Г Г­ 23.8" IPS (1920x1080) Full HD / AMD Ryzen 3 5300U (2.6 - 3.8 ГѓГѓГ¶) / RAM 8 ГѓГЃ / SSD 256 ГѓГЃ / AMD Radeon Graphics / ГЎГҐГ§ ГЋГ„ / LAN / Wi-Fi / Bluetooth / ГўГҐГЎ-ГЄГ Г¬ГҐГ°Г  / ГЎГҐГ§ ГЋГ‘ / 7 ГЄГЈ / Г·ГҐГ°Г­Г»Г©', 7, 16892)
 
 INSERT INTO Images ([Url], ProductFK)
 VALUES ('/images/iPhone-11-64GB-Slim-Box-(MHDG3).jpg', 1), ('/images/iphone-12-mini-purple.jpg', 2),
@@ -114,7 +114,7 @@ INSERT INTO Roles([Name])
 VALUES ('user'), ('admin')
 
 INSERT INTO Buyers([FirstName], [LastName], [Phone], [Email], [Birthday], [RoleFK], [Password])
-VALUES ('Vladislava', 'Golovan', '+380965323364', 'admin@gmail.com', NULL, 2, 'jGl25bVBBBW96Qi9Te4V37Fnqchz/Eu4qB9vKrRIqRg=')
+VALUES ('Vladyslava', 'Holovan', '+380965323364', 'admin@gmail.com', NULL, 2, 'jGl25bVBBBW96Qi9Te4V37Fnqchz/Eu4qB9vKrRIqRg=')
 
 --SELECT *
 --FROM Categories
