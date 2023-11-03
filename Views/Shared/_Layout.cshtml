@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewBag.Title</title>
-    <link rel="icon" type="image/x-icon" href="~/darkLogo.ico" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />*@
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
@@ -40,7 +40,7 @@
             <div>
                 @using (Html.BeginForm("Search", "Home", FormMethod.Get))
                 {
-                    <input type="search" name="text" id="searchInputText" placeholder="Search our shop..."/>
+                    <input type="search" name="text" id="searchInputText" placeholder=" Search our shop..."/>
                     <button type="submit" id="searchBtn">&#128269;</button>
                 }
             </div>
